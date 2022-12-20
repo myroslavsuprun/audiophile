@@ -5,7 +5,9 @@ import { Outlet } from 'react-router-dom';
 const SharedLayout = () => {
   return (
     <>
-      <div style={{ fontFamily: 'ManropeMedium' }}><Header/></div>
+      <div style={{ fontFamily: 'ManropeMedium' }}>
+        <Header />
+      </div>
       <Container>
         <Outlet />
       </Container>
