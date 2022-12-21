@@ -2,26 +2,29 @@ import styles from './Header.module.scss';
 import { Container } from '../Container';
 import 'styles/common/common.scss';
 // import { useMediaQuery } from 'react-responsive';
+import { AudiophileLogo } from './AudiophileLogo';
+import { Cart } from './Cart';
+import Navigation from './Navigation/Navigation';
 
-
-const Header = ({ isTransparent = false }) => {
+const Header = ({ isTransparent = false, screen = 'desktop' }) => {
   return (
-    <header className={`${styles.header} ${isTransparent&&styles.header__transparent}`}>
-      <Container>
-        {/* need to unite thisdiv with container */}
-        <div className={styles.headerContainer}>
-          <div>=</div>
-          <span className={styles.logo}>audiophile</span>
-          {/* <nav>
-            <ul className={`list ${styles.navList}`}>
-              <li>Home</li>
-              <li>Headphones</li>
-              <li>Speakers</li>
-              <li>Earphones</li>
-            </ul>
-          </nav> */}
-          <button type="button"></button>
-        </div>
+    <header
+      className={`${styles.header} ${
+        isTransparent && styles.header__transparent
+      }`}
+    >
+      <Container classNameProp={styles.headerContainer}>
+        {screen === 'mobile' && <div>=</div>}
+        <AudiophileLogo classNameProp={styles.logo} />
+        {screen === 'desktop' && (
+          <Navigation
+            navItems={['Home', 'Headphones', 'Speakers', 'Earphones']}
+          />
+        )}
+        <button className={styles.CartButton} type="button">
+          <Cart />
+        </button>
+        
       </Container>
     </header>
   );

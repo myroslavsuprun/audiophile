@@ -1,6 +1,10 @@
 @import 'styles';
 
 .header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   background-color: $dark;
   color: $light;
   display: flex;
@@ -19,14 +23,24 @@
   @include mediaUpTo('tablet') {
   }
   @include mediaInBetween('tablet', 'desktop') {
-    display: grid;
   }
 }
 
-.navList {
-  display: flex;
-}
 
 .logo {
   padding: 32px 0;
+  cursor: pointer;
+}
+
+.CartButton {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    fill: $main-color;
+  }
 }

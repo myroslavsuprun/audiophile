@@ -1,0 +1,25 @@
+@import 'styles';
+
+.navList {
+  display: flex;
+}
+
+.navItem {
+  &:not(:last-child) {
+    margin-right: 34px;
+  }
+}
+
+.navLink {
+  padding-top: 100%;
+  padding-bottom: 100%;
+  text-transform: uppercase;
+
+  @extend %sub-title-font;
+  letter-spacing: 2px;
+
+  &:hover,
+  &:focus {
+    color: $main-color;
+  }
+}
