@@ -6,15 +6,24 @@
   @include mediaUpTo('tablet') {
     width: getBreakpointValue('mobile');
     padding: 0 getLRPValue('mobile');
+
+    width: 375px;
+    padding: 0 24px;
   }
 
   @include mediaInBetween('tablet', 'desktop') {
     width: (getBreakpointValue('tablet'));
     padding: 0 getLRPValue('tablet');
+
+    width: 768px;
+    padding: 0 40px;
   }
 
   @include mediaOver('desktop') {
     width: (getBreakpointValue('desktop'));
     padding: 0 getLRPValue('desktop');
+
+    width: 1440px;
+    padding: 0 165px;
   }
 }

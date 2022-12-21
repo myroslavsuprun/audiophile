@@ -6,7 +6,7 @@ const SharedLayout = () => {
   return (
     <>
       <div style={{ fontFamily: 'ManropeMedium' }}>
-        <Header />
+        <Header/>
       </div>
       <Container>
         <Outlet />
